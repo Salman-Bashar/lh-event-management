@@ -8,9 +8,6 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
-      color: {
-        'lh-blue': '#0A142F',
-      },
     },
   },
   plugins: [],
