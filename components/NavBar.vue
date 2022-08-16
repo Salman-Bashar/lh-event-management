@@ -1,9 +1,9 @@
 <template>
-  <div class="top-8 h-16 w-full absolute flex justify-evenly">
+  <nav class="top-8 h-16 w-full absolute flex justify-evenly">
     <div id="logo">
       <img src="~/assets/logo.svg" alt="Website Logo" class="h-full pr-10" />
     </div>
-    <nav id="NavItems">
+    <div id="NavItems">
       <ul class="flex justify-center">
         <li
           v-for="item in navItems"
@@ -13,8 +13,8 @@
           <nuxt-link :to="item.link">{{ item.name }}</nuxt-link>
         </li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </template>
 
 <script>

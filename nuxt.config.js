@@ -34,6 +34,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/apollo',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -55,4 +58,14 @@ export default {
       Inter: true
     }
   },
+
+  // Apollo configuration
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://api.react-finland.fi/graphql',
+      },
+    },
+  },
+
 }
