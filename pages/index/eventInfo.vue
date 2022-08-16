@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div>
     <EventSchedule />
   </div>
@@ -8,4 +8,4 @@
 export default {
     name: "EventInfo",
 }
-</script> -->
+</script>

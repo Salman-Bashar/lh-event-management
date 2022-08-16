@@ -1,15 +1,16 @@
-<!-- <template>
+<template>
   <div class="p-8">
     <h1 class="font-bold text-2xl mb-8">Event Schedule</h1>
     <div class="grid grid-cols-3 gap-8">
       <div v-for="conference in conferences" :key="conference.id" class="flex flex-col items-start" >
         <NuxtLink :to="`/event/${conference.id}`">
-          <h2 class="font-bold">{{conference.name}}</h2>
+          <p class="font-bold">{{conference.name}}</p>
         </NuxtLink>
         <div class="text-sm text-gray-800">
-          <p>Organized By: {{conference.organizer.name}}</p>
-          <p>Date: {{conference.schedule.day}}</p>
-          <p>Location: {{conference.schedule.location}}</p>
+          <p>Starting Date: {{conference.startDate}}</p>
+        </div>
+        <div class="flex-grow min-h-full">
+          <nuxt-child :key="$route.params.id"></nuxt-child>
         </div>
       </div>
     </div>
@@ -19,24 +20,21 @@
 <script>
 import gql from 'graphql-tag'
 
+const ALL_CONFERENCES = gql`
+  query getConferences {
+    conferences {
+      id
+      name
+      startDate
+    }
+  }
+`
+
 export default {
-  name: 'EventSchedule',
+  name: "EventSchedule",
   apollo: {
-    conferences: gql`
-      query ALL_CONFERENCES_QUERY {
-        conferences {
-          id
-          name
-          organizer {
-            name
-          }
-          schedules {
-            day
-            location
-          }
-        }
-      }
-    `,
+    conferences: ALL_CONFERENCES,
   },
 }
-</script> -->
+</script>
+
